@@ -19,6 +19,11 @@
       "_id": "id5678",
       "boardTitle": "travel",
       "isStarred": false
+    },
+    {
+      "_id": "453634",
+      "boardTitle": "test34",
+      "isStarred": true
     }
   ]
 }

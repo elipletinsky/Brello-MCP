@@ -7,8 +7,9 @@
     "server:build": "tsc",
     "server:build:watch": "tsc --watch",
     "server:dev": "tsx src/server.ts",
+    "json-server:dev": "tsx src/ServerLocalJson.ts",
     "server:inspect": "set DANGEROUSLY_OMIT_AUTH=true && npx @modelcontextprotocol/inspector npm run server:dev",
-    "client:dev": "tsx src/client.ts"
+    "json-server:inspect": "set DANGEROUSLY_OMIT_AUTH=true && npx @modelcontextprotocol/inspector npm run json-server:dev"
   },
   "keywords": [],
   "author": "",
