@@ -1,0 +1,24 @@
+{
+    "boards": [
+        {
+            "_id": "6823323354ef930c2637dc8e",
+            "boardTitle": "testBoard",
+            "isStarred": false
+        },
+        {
+            "_id": "id1234",
+            "boardTitle": "test create board",
+            "isStarred": true
+        },
+        {
+            "_id": "1",
+            "boardTitle": "New Board",
+            "isStarred": false
+        },
+        {
+            "_id": "id5678",
+            "boardTitle": "travel",
+            "isStarred": false
+        }
+    ]
+}
