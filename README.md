@@ -15,10 +15,9 @@ A Model Context Protocol (MCP) server implementation for a Trello-like board man
 ### Architecture
 
 #### MCP Server Structure
-The server is built using the Model Context Protocol (MCP) pattern with three main types of interactions:
+The server is built using the Model Context Protocol (MCP) pattern with two main types of interactions:
 1. **Resources** - For data fetching operations
 2. **Tools** - For data manipulation operations
-3. **Prompts** - For user interactions
 
 #### Dual Data Storage Strategy
 The server implements two parallel data management approaches:
@@ -89,9 +88,69 @@ const server = new McpServer({
 ## Development
 
 ### Prerequisites
-- Node.js
+- Node.js (v14 or higher)
 - TypeScript
 - npm/yarn
+- Visual Studio Code with MCP Extension
+
+### Setting up MCP Server in VS Code
+
+1. **Install the MCP Extension**
+   - Open VS Code
+   - Go to Extensions (Ctrl+Shift+X)
+   - Search for "Model Context Protocol"
+   - Install the extension
+
+2. **Configure MCP Server**
+   - Create a `.vscode/mcp.json` file in your project with the following configuration:
+   ```json
+   {
+     "servers": {
+       "my-mcp-server": {
+         "type": "stdio",
+         "command": "node",
+         "args": [
+           "build/server.js"
+         ],
+         "cwd": "${workspaceFolder}",
+         "dev": {
+           "watch": "build/**/*.js",
+           "debug": {
+             "type": "node"
+           }
+         }
+       }
+     }
+   }
+   ```
+
+3. **Start the Server**
+   - Press `Ctrl+Shift+P` to open the command palette
+   - Type "MCP: List Servers"
+   - Select your configured server
+   - Select start server
+
+For local development, you can also use the local JSON server configuration by adding:
+```json
+{
+  "servers": {
+    "local-json-server": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "build/ServerLocalJson.js"
+      ],
+      "cwd": "${workspaceFolder}",
+      "dev": {
+        "watch": "build/**/*.js",
+        "debug": {
+          "type": "node"
+        }
+      }
+    }
+  }
+}
+```
 
 ### Available Scripts
 - `npm run server:build` - Build the TypeScript code
